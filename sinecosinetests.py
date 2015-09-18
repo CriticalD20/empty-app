@@ -47,13 +47,14 @@ ycoordinates=[100+100*sin(radians(x))for x in xcoordinates]
 y2coordinates=[100+100*cos(radians(x))for x in xcoordinates]
 x2coordinates=[100+100*cos(radians(x))for x in xcoordinates]
 y3coordinates=[400+100*sin(radians(x))for x in xcoordinates]
+
 xy=zip(xcoordinates, ycoordinates)
 xy2=zip(xcoordinates, y2coordinates)
 x2y3=zip(x2coordinates, y3coordinates)
 #use ziping for lists tomorrow of Friday
-sprites=[Sprite(mycircle, (x, y*100+100))for x in xy]
-sprites=[Sprite(mycircle2, (x, y2*100+100))for x in xy2]
-sprites=[Sprite(mycircle3, (x, y3*400+100))for x in x2y3]
+sprites=[Sprite(mycircle, x)for x in xy]
+sprites=[Sprite(mycircle2, x)for x in xy2]
+sprites=[Sprite(mycircle3, x)for x in x2y3]
 
 myapp=App()
 myapp.run()
